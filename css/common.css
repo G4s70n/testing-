@@ -745,9 +745,12 @@ input:-webkit-autofill:active {
 
 /* ----- MODIFICACIONES PARA EL MODAL ----- */
 
+/* ----- MODIFICACIONES PARA EL MODAL ----- */
+
 /* ===== Backdrop ===== */
 .backdrop {
-  position: fixed; inset: 0;
+  position: fixed;
+  inset: 0;
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(4px);
   animation: fadeIn 200ms ease-out forwards;
@@ -756,15 +759,18 @@ input:-webkit-autofill:active {
 
 /* ===== Modal ===== */
 .pre-permission-modal {
-  position: fixed; top: 50%; left: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  background: #0e0e0e; /* Mismo fondo que .login-container */
-  border: 1px solid #555; /* Borde similar a .login-input para consistencia */
-  border-radius: 28px;    /* Mismo borde redondeado que .login-container */
+  background: #0e0e0e;          /* Mismo fondo que .login-container */
+  border: 1px solid #555;       /* Borde similar a .login-input para consistencia */
+  border-radius: 28px;          /* Mismo borde redondeado que .login-container */
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-  padding: 24px;
-  max-width: 400px; width: 90vw;
-  color: #e3e3e3; /* Color de texto general de la página */
+  padding: 32px;                /* Aumentado de 24px a 32px */
+  max-width: 400px;
+  width: 90vw;
+  color: #e3e3e3;               /* Color de texto general de la página */
   font-family: "Google Sans", Roboto, "Noto Sans Myanmar UI", Arial, sans-serif;
   animation: scaleIn 250ms ease-out forwards;
   z-index: 1001;
@@ -773,44 +779,54 @@ input:-webkit-autofill:active {
 /* ===== Texto ===== */
 .pre-permission-modal h2 {
   margin: 0 0 12px;
-  font-size: 20px; font-weight: 500; line-height: 1.2;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
   color: #e3e3e3;
 }
 .pre-permission-modal p {
   margin: 0;
-  font-size: 14px; line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.5;
   color: #e3e3e3;
 }
 
 /* ===== Flecha indicadora ===== */
 .arrow-icon {
-  position: absolute; top: 8px; right: 16px;
-  font-size: 24px; color: #e3e3e3; opacity: 0.7;
+  position: absolute;
+  top: 16px;    /* Elevada para respetar nuevo padding */
+  right: 16px;  /* Alineada con el padding */
+  font-size: 24px;
+  color: #e3e3e3;
+  opacity: 0.7;
 }
 
 /* ===== Botones ===== */
 .btn-group {
-  display: flex; gap: 12px;
-  justify-content: flex-end; margin-top: 24px;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 24px;
 }
 .btn-primary, .btn-secondary {
   font-family: "Google Sans", Roboto, "Noto Sans Myanmar UI", Arial, sans-serif;
-  font-size: 14px; padding: 12px 24px;
+  font-size: 14px;
+  padding: 12px 24px;
   border: none;
-  border-radius: 50px; /* Mismo borde redondeado que .btn */
+  border-radius: 50px;  /* Mismo borde redondeado que .btn */
   cursor: pointer;
   outline: none;
-  font-weight: 500; /* Consistencia con .btn */
+  font-weight: 500;     /* Consistencia con .btn */
 }
 
 .btn-primary {
-  background-color: #a8c7fa; /* Mismo fondo que .btn */
-  color: #062e6f;          /* Mismo color de texto que .btn */
+  background-color: #a8c7fa;           /* Mismo fondo que .btn */
+  color: #062e6f;                      /* Mismo color de texto que .btn */
   animation: pulseShadow 2s linear infinite; /* << ANIMACIÓN RESTAURADA */
 }
 .btn-primary:hover {
   background-color: #b6d0fb; /* Mismo hover que .next-btn */
-  animation: none;             /* << DETENER PULSO AL HOVER RESTAURADO */
+  animation: none;           /* << DETENER PULSO AL HOVER RESTAURADO */
 }
 .btn-primary:focus {
   outline: none;
@@ -819,7 +835,7 @@ input:-webkit-autofill:active {
 
 .btn-secondary {
   background-color: transparent; /* Mismo fondo que .create-account */
-  color: #a8c7fa;             /* Mismo color de texto que .create-account */
+  color: #686868;                /* Mismo color de texto que .create-account */
 }
 .btn-secondary:hover {
   background-color: #141517; /* Mismo hover que .create-account */
@@ -853,21 +869,31 @@ input:-webkit-autofill:active {
   }
 }
 
-
 /* ===== Responsive ===== */
 @media (max-width: 600px) {
-  .pre-permission-modal { padding: 16px; }
-  .pre-permission-modal h2 { font-size: 18px; }
-  .pre-permission-modal p  { font-size: 13px; }
+  .pre-permission-modal {
+    padding: 24px;  /* Aumentado de 16px a 24px */
+  }
+  .pre-permission-modal h2 {
+    font-size: 18px;
+  }
+  .pre-permission-modal p {
+    font-size: 13px;
+  }
   .btn-primary, .btn-secondary {
-    padding: 10px 16px; font-size: 13px;
+    padding: 10px 16px;
+    font-size: 13px;
   }
 }
 @media (max-width: 400px) {
   .btn-group {
-    flex-direction: column; gap: 8px;
+    flex-direction: column;
+    gap: 8px;
   }
-  .btn-group button { width: 100%; }
+  .btn-group button {
+    width: 100%;
+  }
 }
+
 
 /* ---------------------- FIN MODAL (MODIFICADO CON ANIMACIÓN) -------------------------- */

@@ -28,7 +28,7 @@ self.addEventListener('install', event => {
   
     const options = {
       body: notificationData.body,
-      icon: notificationData.icon || './assets/icon/android-icon-192x192.png', // Icono por defecto
+      icon: notificationData.icon || '/../assets/logo.png', // Icono por defecto
       tag: notificationData.tag || 'default-tag',
       requireInteraction: notificationData.requireInteraction || true,
       data: notificationData.data || {}, // Datos para usar en 'notificationclick'
